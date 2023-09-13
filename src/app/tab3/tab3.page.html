@@ -1,17 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title> Idade Dog </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Idade Dog</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <div class="ion-padding">
+    <ion-card>
+      <ion-img
+        src="https://i.pinimg.com/564x/2a/c0/09/2ac0099c4d130907df7c8b57fdb46bf7.jpg"
+      ></ion-img>
+    </ion-card>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="dogAge"
+        label="Idade Canina"
+        labelPlacement="floating"
+        id="dogAge"
+        fill="solid"
+        placeholder="Insira a idade"
+      ></ion-input>
+    </ion-item>
+
+    <div *ngIf="humanAge">
+      <p>Idade humana do seu cão {{humanAge}}</p>
+    </div>
+    <ion-button type="submit" (click)="showAge()">Calcular</ion-button>
+    <ion-button type="submit" (click)="clearBox()">Limpar</ion-button>
+  </div>
 </ion-content>

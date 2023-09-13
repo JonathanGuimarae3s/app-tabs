@@ -9,9 +9,35 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">IMC</ion-title>
+
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-item>
+    <ion-input
+      [(ngModel)]="height"
+      label="Altura"
+      labelPlacement="floating"
+      class="inputs"
+      fill="solid"
+      placeholder="Insira a sua altura"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input
+      [(ngModel)]="weight"
+      label="Peso"
+      labelPlacement="floating"
+      class="inputs"
+      fill="solid"
+      placeholder="Insira o seu peso"
+    ></ion-input>
+  </ion-item>
+
+  <div *ngIf='imc'>
+    <p>Esse é o seu IMC -> {{imc}}</p>
+  </div>
+  <ion-button type="submit" (click)="calculate()">Calcular</ion-button>
+  <ion-button type="submit" (click)="clearBoxes()">Limpar</ion-button>
 </ion-content>
